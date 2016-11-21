@@ -1,0 +1,368 @@
+/**ОБЩИЕ**/
+
+body {
+  padding: 0;
+  margin: 0;
+  color: #343434;
+}
+
+.clear {
+  clear: both;
+}
+
+h1 {
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 26.4px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 22px;
+}
+
+p {
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.wrap {
+  position: relative;
+  display: table;
+}
+
+/**КОЛОНКА**/
+
+.col {
+  display: table-cell;
+  box-sizing: border-box;
+  width: 33.33%;
+  height: 100%;
+  border-right: 1px solid #e2e2e2;
+  padding: 10px 35px 10px 15px;
+}
+
+.col:last-child {
+  border: none;
+}
+
+/**СТИКЕР**/
+
+.sticker {
+  padding: 10px 10px 10px 20px;
+  margin-bottom: 15px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+}
+
+/**ПОЛНЫЙ РАЗМЕР**/
+
+.sticker.full {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  top: 50px;
+  width: 70%;
+  z-index: 2;
+}
+
+.sticker.full .label {
+  width: auto;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.sticker.full .label .label-name {
+  display: inline;
+  color: #fff;
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px;
+}
+
+.sticker.full .label.yellow .label-name{
+  color: #5e2309;
+}
+
+.sticker.full .close {
+  display: block;
+  float: right;
+  padding: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.sticker.full .guy {
+  float: left;
+  margin: 10px 10px 0 0;
+}
+
+.sticker.full h2.title {
+  font-size: 24px;
+}
+
+.sticker.full .description {
+  font-size: 16px;
+}
+
+.sticker.full .icons {
+  display: none;
+}
+
+.sticker.full .attachments {
+  display: block;
+}
+
+.sticker.full .attach {
+  float: left;
+}
+
+.attach .file-icon {
+  width: 150px;
+  height: 100px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  margin-right: 22px;
+}
+
+.attach .file-icon img {
+  display: block;
+  margin: auto;
+  height: 70px;
+  margin-top: 15px;
+}
+
+.attach p {
+  width: 150px;
+  margin: 0;
+  line-height: normal;
+  text-align: center;
+}
+
+p.file-date {
+  color: #999;
+  font-size: 12px;
+}
+
+.sticker.full .comments {
+  display: block;
+}
+
+.comments .ava {
+  box-sizing: border-box;
+  border: 1px solid #fcf8ef;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background: #fcf8ef;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  margin-right: 10px;
+}
+
+.ava img {
+  height: 36px;
+  display: block;
+  margin: 4px auto;
+}
+
+.comment .ava {
+  display: inline-block;
+}
+
+.new-comment textarea {
+  box-sizing: border-box;
+  position: absolute;
+  margin: -40px 50px;
+  padding: 10px;
+  width: calc(100% - 90px);
+  height: 42px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: inset 0px 1px 4px 0px rgba(0,0,0,0.2);
+}
+
+.button {
+  float: right;
+  margin: 10px;
+}
+
+.button button {
+  color: #ffffff;
+  width: 130px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background: #57b9dd;
+  box-shadow: 0px 2px 0px 0px rgba(61,160,196,1);
+}
+
+.comment {
+  box-sizing: border-box;
+  margin: 0px 0 0;
+}
+
+.comment .textarea {
+  box-sizing: border-box;
+  /*position: absolute;
+  margin: -40px 50px;*/
+  display: inline-block;
+  margin: 10px 0;
+  padding: 10px;
+  width: calc(100% - 65px);
+  /*height: 42px;*/
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+}
+
+.answer-button {
+  font-size: 12px;
+  color: #999999;
+  cursor: pointer;
+}
+
+.textarea p {
+  margin: 0;
+}
+
+.comment.answer {
+  margin-left: 50px;
+}
+
+/**МЕТКИ**/
+
+.label {
+  display: inline-block;
+  width: 40px;
+  height: 10px;
+  border-radius: 5px;
+  margin: 0px 5px 0 0;
+}
+
+.label.red {
+  background: #e15815;
+}
+
+.label.yellow {
+  background: #ffe013;
+}
+
+.label.blue {
+  background: #57b9dd;
+}
+
+.label.green {
+  background: #a2bd00;
+}
+
+.label-name {
+  display: none;
+}
+
+/**ЗАКРЫТЬ**/
+
+.close {
+  display: none;
+}
+
+/**ДАТА**/
+
+.date {
+  color: #999;
+}
+
+/**ИНДИКАТОР**/
+
+.indicator {
+  position: absolute;
+  margin: -26px 75px;
+  background: #6ec227;
+  border-radius: 100px;
+  width: 6px;
+  height: 6px;
+}
+
+.indicator.yellow {
+  background: #ffe013;
+}
+
+.indicator.red {
+  background: #e15815;
+}
+
+/**ВЛОЖЕНИЯ**/
+
+.icons img {
+  width: 16px;
+  height: 16px;
+  margin: 0 5px 0 15px;
+}
+
+.icons {
+  color: #999;
+}
+
+.icons img:first-child {
+  margin-left: 0;
+}
+
+.attachments {
+  display: none;
+}
+
+/**УЧАСТНИКИ**/
+
+.guy {
+  float: right;
+  box-sizing: border-box;
+  border: 1px solid #fcf8ef;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background: #fcf8ef;
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
+  margin-left: 10px;
+}
+
+.guy img {
+  height: 36px;
+  display: block;
+  margin: 4px auto;
+}
+
+/****/
+
+.comments {
+  display: none;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    bottom: 0;
+    cursor: default;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    z-index: 1;
+		-webkit-transition: opacity .5s;
+		-moz-transition: opacity .5s;
+		-ms-transition: opacity .5s;
+		-o-transition: opacity .5s;
+		transition: opacity .5s;
+}
