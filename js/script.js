@@ -30,9 +30,33 @@ $(document).ready(function() {
 
   });
 
+// drag & drop
+
 	$( ".col" ).sortable({
 		connectWith: ".col",
 		placeholder: "sticker-placeholder"
 	});
 
+// menu button
+
+	$(".cmn-toggle-switch").click(function() {
+		$(this).toggleClass("active");
+		$(".dark-bg").toggleClass("active");
+	});
+
+// open panel
+
+	$('.panel-label').click(function () {
+		if($(this).hasClass('open')) {
+			$(".panel").animate({right: '-20%'}, 500);
+			$(".panel-label").animate({right: '0'}, 500);
+			$(".panel-label").removeClass('open');
+		}else{
+			$(".panel").animate({right: '0'}, 500);
+			$(".panel-label").animate({right: '20%'}, 500);
+			$(".panel-label").addClass('open');
+		}
+	});
+
 });
+
