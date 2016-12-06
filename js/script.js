@@ -58,5 +58,25 @@ $(document).ready(function() {
 		}
 	});
 
+// change form
+
+	$('.tab-name:first-child').click(function () {
+		if($(this).hasClass('inactive')) {
+			$(".loginForm:nth-child(1)").show();
+			$(".loginForm:nth-child(2)").hide();
+			$(".tab-name:first-child").removeClass('inactive');
+			$(".tab-name:nth-child(2)").addClass('inactive');
+		}
+	});
+
+	$('.tab-name:nth-child(2)').click(function () {
+		if($(this).hasClass('inactive')) {
+			$(".loginForm:nth-child(2)").show();
+			$(".loginForm:nth-child(1)").hide();
+			$(".tab-name:nth-child(2)").removeClass('inactive');
+			$(".tab-name:first-child").addClass('inactive');
+		}
+	});
+
 });
 
