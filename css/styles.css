@@ -8,6 +8,10 @@ body {
   font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
+body.bg {
+  background: url("../img/pattern.png");
+}
+
 .clear {
   clear: both;
 }
@@ -18,19 +22,19 @@ a {
 }
 
 h1 {
-    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 26px;
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 26px;
   text-transform: uppercase;
   text-align: center;
 }
 
 h2 {
   font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
-	font-size: 20px;
-	font-weight: 400;
-	line-height: 22px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 22px;
 }
 
 p {
@@ -55,6 +59,7 @@ p {
   position: fixed;
   top: 10px;
   right: 0;
+    z-index: 1;
 }
 
 
@@ -117,7 +122,7 @@ p {
  * Style 2
  */
 .cmn-toggle-switch__htx {
-  background-color: #57b9dd;
+  background-color: #e15815;
 }
 
 
@@ -141,7 +146,7 @@ p {
 
 /* active state*/
 .cmn-toggle-switch__htx.active {
-  background-color: #43a0c5;
+  background-color: #e15815;
 }
 
 .cmn-toggle-switch__htx.active span {
@@ -181,6 +186,7 @@ p {
   z-index: 5;
   text-align: center;
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+    overflow-y: auto;
 }
 
 .panel .avatar {
@@ -230,10 +236,110 @@ p {
   padding: 0;
 }
 
-.top-title {
+/**ПАНЕЛЬ-ФИЛЬТР**/
+
+.panel.filter {
+    display: none;
+}
+
+.close-cross {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.block-filter-title {
+    box-sizing: border-box;
+    border-radius: 5px 5px 0 0;
+    margin: 0 20px;
+    padding: 1px 20px;
+    text-align: left;
+    color: #FFFFFF;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+}
+
+.block-filter-title.filter-label {
+    background: #e15815;
+}
+
+.block-filter-title.filter-time {
+    background: #a2bd00;
+}
+
+.block-filter-title.filter-member {
+    background: #57b9dd;
+}
+
+.block-filter-title h2 {
+    margin: 10px 0;
+}
+
+.block-filter-content {
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border-radius: 0 0 5px 5px;
+    margin: 0 20px 20px;
+    padding: 1px 20px;
+    text-align: left;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+}
+
+.line {
+    padding: 5px 0;
+}
+
+.line label {
+    cursor: pointer;
+}
+
+.line .label-color {
+    margin: 0 10px 0 0;
+    float: left;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ececec;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.line input {
   display: block;
-  width: 100%;
+  float: right;
+    cursor: pointer;
+}
+
+.guy.filter {
+    float: left;
+    margin: 0 10px 5px 0;
+    width: 30px;
+    height: 30px;
+
+}
+
+.guy.filter img {
+    height: 90%;
+    margin-top: 11%;
+}
+
+/**ВЕРХНЕЕ НАЗВАНИЕ**/
+
+.top-title {
+  box-sizing: border-box;
+  display: block;
   margin: 20px;
+  background: #fcfcfc;
+  border-radius: 5px;
+  padding: 2px 20px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+}
+
+.top-title a img {
+  height: 20px;
+  margin: 0 10px -3px;
 }
 
 /**КОЛОНКА**/
@@ -252,6 +358,15 @@ p {
   border: none;
 }
 
+.col > .title {
+  background: #a2bd00;
+  color: #FFFFFF;
+  padding: 2px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+}
+
 /**СТИКЕР**/
 
 .sticker {
@@ -260,6 +375,14 @@ p {
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.sticker.new {
+  cursor: pointer;
+  background: #57b9dd;
+  box-shadow: 0 2px 0 0 rgba(61,160,196,1);
+  color: #FFFFFF;
 }
 
 /**ПОЛНЫЙ РАЗМЕР**/
@@ -271,6 +394,7 @@ p {
   top: 50px;
   width: 70%;
   z-index: 2;
+  cursor: default;
 }
 
 .sticker.full .label {
@@ -460,19 +584,19 @@ p.file-date {
   margin: 0 5px 0 0;
 }
 
-.label.red {
+.red {
   background: #e15815;
 }
 
-.label.yellow {
+.yellow {
   background: #ffe013;
 }
 
-.label.blue {
+.blue {
   background: #57b9dd;
 }
 
-.label.green {
+.green {
   background: #a2bd00;
 }
 
@@ -575,6 +699,18 @@ p.file-date {
 		transition: opacity .5s;
 }
 
+.over {
+    bottom: 0;
+    cursor: default;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    z-index: 1;
+}
+
 .sticker-placeholder {
 	border: 3px dashed #57b9dd;
 	border-radius: 10px;
@@ -586,9 +722,8 @@ p.file-date {
 .form {
 
   width: 25%;
-	min-width: 340px;
+	min-width: 440px;
   margin: 5% auto;
-
 }
 
 .tab-name {
@@ -621,7 +756,7 @@ p.file-date {
 	background: #FFFFFF;
 	border-radius: 5px;
 	width: 25%;
-	min-width: 340px;
+	min-width: 440px;
 	height: 20px;
 	position: absolute;
 }
@@ -724,4 +859,87 @@ p.file-date {
 .loginForm:nth-child(1) {
 	display: none;
 	/*border: 2px solid crimson;*/
+}
+
+
+.confirm {
+  display: none;
+  box-sizing: border-box;
+  position: absolute;
+  top: 150px;
+  width: 25%;
+  min-width: 440px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  z-index: 5;
+}
+
+.confirm .close {
+  display: block;
+  float: right;
+  padding: 10px;
+  margin: 0 -10px;
+  cursor: pointer;
+}
+
+h2 span.red {
+  color: #e15815;
+  font-weight: bold;
+}
+
+h2 span.yellow {
+  color: #ffe013;
+  font-weight: bold;
+}
+
+h2 span.green {
+  color: #6ec227;
+  font-weight: bold;
+}
+
+h2 span.blue {
+  color: #57b9dd;
+  font-weight: bold;
+}
+
+img.logo  {
+  height: 25px;
+  margin-right: 20px;
+  margin-bottom: -3px;
+}
+
+.form-logo {
+  display: block;
+  margin: 30px auto;
+}
+
+.board {
+  width: 23%;
+  min-width: 350px;
+  float: left;
+  box-sizing: border-box;
+  margin: 1%;
+  padding: 30px 15px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+}
+
+.board.new {
+  background: #57b9dd;
+  box-shadow: 0 2px 0 0 rgba(61,160,196,1);
+  color: #FFFFFF;
+}
+
+.new img {
+  height: 20px;
+  margin: 0 10px -3px;
+}
+
+.main {
+  position: absolute;
+  top: 90px;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }

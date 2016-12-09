@@ -11,31 +11,34 @@ $(document).ready(function() {
 
 
 
-  $('.sticker').click(function() {
+	$('.sticker:not(.new)').click(function() {
 		$(this).addClass("full");
-    $(".overlay").css({'opacity': 1, 'visibility': 'visible'});
-    var b1 = document.querySelector('.sticker.full .title');//блок перед которым ставим
-    var b2 = document.querySelector('.sticker.full .members');//блок который передвигаем
-    b1.parentNode.insertBefore(b2, b1);
+		$(".overlay").css({'opacity': 1, 'visibility': 'visible'});
+		var b1 = document.querySelector('.sticker.full .title');//блок перед которым ставим
+		var b2 = document.querySelector('.sticker.full .members');//блок который передвигаем
+		b1.parentNode.insertBefore(b2, b1);
 	});
 
-  $('.close, .overlay').click(function() {
+	$('.close, .overlay').click(function() {
 
-	  var b1 = document.querySelector('.sticker.full .attachments');//блок перед которым ставим
-	  var b2 = document.querySelector('.sticker.full .members');//блок который передвигаем
-	  b2.parentNode.insertBefore(b2, b1);
-	  $(".sticker").removeClass("full");
-	  $(".overlay").css({'opacity': 0, 'visibility': 'hidden'});
-	  return false;
+		var b1 = document.querySelector('.sticker.full .attachments');//блок перед которым ставим
+		var b2 = document.querySelector('.sticker.full .members');//блок который передвигаем
+		b2.parentNode.insertBefore(b2, b1);
+		$(".sticker").removeClass("full");
+		$(".overlay").css({'opacity': 0, 'visibility': 'hidden'});
+		return false;
 
-  });
+	});
 
 // drag & drop
 
 	$( ".col" ).sortable({
 		connectWith: ".col",
-		placeholder: "sticker-placeholder"
+		placeholder: "sticker-placeholder",
+        items: ".sticker:not(.new, .title)",
+		cancel: ".sticker.full"
 	});
+
 
 // menu button
 
@@ -58,6 +61,16 @@ $(document).ready(function() {
 		}
 	});
 
+    $('.col, .main').click(function() {
+        if($('.panel-label').hasClass('open')) {
+            $(".panel").animate({right: '-20%'}, 500);
+            $(".panel-label").animate({right: '0'}, 500);
+            $(".panel-label").removeClass('open');
+            $('.cmn-toggle-switch').toggleClass("active");
+            $(".dark-bg").toggleClass("active");
+        }
+    });
+
 // change form
 
 	$('.tab-name:first-child').click(function () {
@@ -78,5 +91,52 @@ $(document).ready(function() {
 		}
 	});
 
+// confirm
+
+	$('a#forgot').click(function() {
+		$(".confirm").show();
+		$(".overlay2").css({'opacity': 1, 'visibility': 'visible'});
+	});
+
+	$('div.overlay2, #close, .close img').click(function() {
+		$(".confirm").hide();
+		$(".overlay2").css({'opacity': 0, 'visibility': 'hidden'});
+		return false;
+
+	});
+
+// filter
+
+	$('.filter-link').click(function() {
+		$('.panel.filter').show();
+	});
+
+    $('.close-cross').click(function() {
+        $('.panel.filter').hide();
+    });
+
 });
+
+/*window.onload = function(){
+ var b1 = document.getElementById("title");//блок перед которым ставим
+ var b2 = document.getElementById("members");//блок который передвигаем
+ b1.parentNode.insertBefore(b2, b1);
+
+ $('.draggable').draggable();
+
+ }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
