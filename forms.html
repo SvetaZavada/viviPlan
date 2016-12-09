@@ -9,8 +9,12 @@
 	<script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
 	<script src="js/script.js"></script>
 </head>
-<body>
-<div class="parent">
+<body class="bg">
+
+<div class="overlay2"></div>
+
+<img class="form-logo" src="img/logo.png">
+
 <div class="form">
 	<div class="tab-name inactive"><h2>Вход</h2></div>
 	<div class="tab-name "><h2>Регистрация</h2></div>
@@ -19,6 +23,12 @@
 	<div class="tab-content">
 
 		<form class="loginForm">
+
+			<div class="tab-img">
+				<img src="img/">
+				<p>Тут тоже будет енот Вася. Но пока он отдыхает ;)
+				<h2>Добро пожаловать в viviPlan!</h2></p>
+			</div>
 
 			<div class="field">
 				<label>Имя пользователя:</label>
@@ -32,8 +42,7 @@
 			</div>
 
 			<div class="submit">
-				<button type="submit">Войти</button>
-				<label id="remember"><input name="" type="checkbox" value="" /> Запомнить меня</label>
+				<button type="submit">Вход</button>
 			</div>
 
 		</form>
@@ -42,7 +51,7 @@
 
 			<div class="tab-img">
 				<img src="img/racoon.png">
-				<p>Это енот Вася. Он ничего не успевает и у него горит дедлайн. <br>
+				<p>Это енот Вася. Он ничего не успевает и у него горит дедлайн. <br><br>
 				   Не будь как Вася.
 				   <h2>Регистрируйся в viviPlan!</h2></p>
 			</div>
@@ -59,17 +68,40 @@
 
 			<div class="field">
 				<label>Пароль:</label>
-				<div class="input"><input type="password" name="" value="" /></div>
+				<div class="input"><input type="password" name="" value=""/></div>
 			</div>
 
 			<div class="submit">
 				<button type="submit">Регистрация</button>
-
 			</div>
 
 		</form>
+
+
+
+
 	</div>
+
+	<form class="loginForm confirm">
+		<div class="close"><img src="img/close.png"></div>
+		<div class="tab-img">
+			<h2>Забыл пароль?</h2>
+			<img src="img/racoon.png">
+			<p>Ничего страшного! <br>
+				Мы можем прислать его на email!
+			</p>
+		</div>
+
+		<div class="field">
+			<label>E-mail:</label>
+			<div class="input"><input type="email" name="" value=""/></div>
+		</div>
+
+		<div class="submit">
+			<button type="submit" id="close">Отправить</button>
+		</div>
+	</form>
 </div>
-</div>
+
 </body>
 </html>

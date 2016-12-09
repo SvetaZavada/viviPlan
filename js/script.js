@@ -78,5 +78,20 @@ $(document).ready(function() {
 		}
 	});
 
+
+// confirm
+
+	$('a#forgot').click(function() {
+		$(".confirm").show();
+		$(".overlay2").css({'opacity': 1, 'visibility': 'visible'});
+	});
+
+	$('div.overlay2, #close, .close img').click(function() {
+		$(".confirm").hide();
+		$(".overlay2").css({'opacity': 0, 'visibility': 'hidden'});
+		return false;
+
+	});
+
 });
 
