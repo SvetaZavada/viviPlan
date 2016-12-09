@@ -105,7 +105,7 @@ $(document).ready(function() {
 
 	});
 
-// filter
+// filter panel
 
 	$('.filter-link').click(function() {
 		$('.panel.filter').show();
@@ -114,6 +114,16 @@ $(document).ready(function() {
     $('.close-cross').click(function() {
         $('.panel.filter').hide();
     });
+
+// labels panel
+
+	$('.labels-link').click(function() {
+		$('.panel.labels').show();
+	});
+
+	$('.close-cross').click(function() {
+		$('.panel.labels').hide();
+	});
 
 });
 
