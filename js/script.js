@@ -1,34 +1,10 @@
-/*window.onload = function(){
-    var b1 = document.getElementById("title");//блок перед которым ставим
-    var b2 = document.getElementById("members");//блок который передвигаем
-    b1.parentNode.insertBefore(b2, b1);
 
- $('.draggable').draggable();
-
-}*/
 $(document).ready(function() {
 
 
 
 
-	$('.sticker:not(.new)').click(function() {
-		$(this).addClass("full");
-		$(".overlay").css({'opacity': 1, 'visibility': 'visible'});
-		var b1 = document.querySelector('.sticker.full .title');//блок перед которым ставим
-		var b2 = document.querySelector('.sticker.full .members');//блок который передвигаем
-		b1.parentNode.insertBefore(b2, b1);
-	});
 
-	$('.close, .overlay').click(function() {
-
-		var b1 = document.querySelector('.sticker.full .attachments');//блок перед которым ставим
-		var b2 = document.querySelector('.sticker.full .members');//блок который передвигаем
-		b2.parentNode.insertBefore(b2, b1);
-		$(".sticker").removeClass("full");
-		$(".overlay").css({'opacity': 0, 'visibility': 'hidden'});
-		return false;
-
-	});
 
 // drag & drop
 
@@ -125,6 +101,106 @@ $(document).ready(function() {
 		$('.panel.labels').hide();
 	});
 
+// create sticker
+
+	$('.sticker.new').click(function() {
+		$('.create-sticker').show();
+		$(".overlay2").css({'opacity': 1, 'visibility': 'visible'});
+	});
+
+	$('.close, .overlay2').click(function() {
+		$(".create-sticker").hide();
+		$(".overlay2").css({'opacity': 0, 'visibility': 'hidden'});
+	});
+
+// new label
+
+	$('.line.new').click(function() {
+		$('.newlabel').show();
+		return false;
+	});
+
+	$('.newlabel .button').click(function() {
+		$('.newlabel').hide();
+	});
+
+// select label
+	$('.chooselabel.pink').click(function() {
+		$('.chooselabel.pink img').toggle();
+	});
+
+	$('.chooselabel.blue').click(function() {
+		$('.chooselabel.blue img').toggle();
+	});
+
+	$('.chooselabel.orange').click(function() {
+		$('.chooselabel.orange img').toggle();
+	});
+
+	$('.chooselabel.red').click(function() {
+		$('.chooselabel.red img').toggle();
+	});
+
+	$('.chooselabel.indigo').click(function() {
+		$('.chooselabel.indigo img').toggle();
+	});
+
+	$('.chooselabel.lime').click(function() {
+		$('.chooselabel.lime img').toggle();
+	});
+
+	$('.chooselabel.cyan').click(function() {
+		$('.chooselabel.cyan img').toggle();
+	});
+
+	$('.chooselabel.amber').click(function() {
+		$('.chooselabel.amber img').toggle();
+	});
+
+	$('.chooselabel.bluegrey').click(function() {
+		$('.chooselabel.bluegrey img').toggle();
+	});
+
+// create board
+
+	$('.board.new').click(function() {
+		$('.create-sticker').show();
+		$(".overlay2").css({'opacity': 1, 'visibility': 'visible'});
+		return false;
+	});
+
+	$('.close img, .overlay2, button').click(function() {
+		$(".create-sticker").hide();
+		$(".overlay2").css({'opacity': 0, 'visibility': 'hidden'});
+	});
+
+// add label
+
+	$('.label.add').click( function() {
+		$('.block-labels.add').toggle();
+	});
+
+	//sticker
+
+	$('.sticker:not(.new)').click(function() {
+		$(this).addClass("full");
+		$(".overlay").css({'opacity': 1, 'visibility': 'visible'});
+		var b1 = document.querySelector('.sticker.full .title');//блок перед которым ставим
+		var b2 = document.querySelector('.sticker.full .members');//блок который передвигаем
+		b1.parentNode.insertBefore(b2, b1);
+		return false;
+	});
+
+	$('.close, .overlay, .close img').click(function() {
+
+		var b1 = document.querySelector('.sticker.full .attachments');//блок перед которым ставим
+		var b2 = document.querySelector('.sticker.full .members');//блок который передвигаем
+		b2.parentNode.insertBefore(b2, b1);
+		$(".sticker").removeClass("full");
+		$(".overlay").css({'opacity': 0, 'visibility': 'hidden'});
+		return false;
+
+	});
 });
 
 /*window.onload = function(){

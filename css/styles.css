@@ -496,7 +496,7 @@ p {
 	display: none;
 }
 
-.sticker.full .attach {
+.attach {
   float: left;
 }
 
@@ -572,6 +572,7 @@ p.file-date {
 .button {
   float: right;
   margin: 10px;
+  cursor: pointer !important;
 }
 
 .button button {
@@ -731,7 +732,7 @@ p.file-date {
   display: none;
 }
 
-.overlay {
+.overlay, .overlay2 {
     background-color: rgba(0, 0, 0, 0.7);
     bottom: 0;
     cursor: default;
@@ -747,18 +748,6 @@ p.file-date {
 		-ms-transition: opacity .5s;
 		-o-transition: opacity .5s;
 		transition: opacity .5s;
-}
-
-.over {
-    bottom: 0;
-    cursor: default;
-    left: 0;
-    opacity: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    visibility: hidden;
-    z-index: 1;
 }
 
 .sticker-placeholder {
@@ -992,4 +981,226 @@ img.logo  {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+/**СОЗДАНИЕ СТИКЕРА**/
+
+.create-sticker {
+  display: none;
+}
+
+.create-sticker {
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  top: 50px;
+  width: 60%;
+  z-index: 2;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+}
+
+textarea {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.2);
+  color: #999999;
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+textarea.title {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.newlabel textarea.title {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+textarea.description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.create-sticker .attachments {
+  display: block;
+}
+
+.attach.new{
+  cursor: pointer;
+}
+
+.attach.new img {
+  width: 20px;
+  height: auto;
+  float: left;
+  padding: 0 10px 0 15px;
+}
+
+.attach.new .file-icon {
+   text-align: left;
+   padding: 25px 0;
+   background: #fcfcfc;
+ }
+
+.attach.new .file-icon:hover {
+  background: #ececec;
+  border: 1px solid #ececec;
+}
+
+.create-sticker .close {
+  display: block;
+  float: right;
+  margin: -20px -5px 0 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.create-sticker .label {
+  width: auto;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.create-sticker .label .label-name {
+  display: inline;
+  color: #fff;
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px;
+}
+
+.create-sticker .label.yellow .label-name {
+  color: #5e2309;
+}
+
+.create-sticker .label.new img {
+  margin-left: 0;
+}
+
+.create-sticker .button {
+  margin-top: 40px;
+  cursor: pointer !important;
+}
+
+.button.square {
+  float: left;
+}
+
+.button.square button {
+  width: 40px;
+  background: #fcfcfc;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+}
+
+.button.square button:hover {
+  background: #ececec;
+  cursor: pointer;
+}
+
+.button.square button img {
+  width: 20px;
+}
+
+.button button:hover,
+.submit button:hover {
+  cursor: pointer;
+  background: #3DA0C4;
+}
+
+.newlabel {
+  display: none;
+  background: #fcfcfc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+  margin: 5px 20px;
+  padding: 5px;
+}
+
+.chooselabel-container {
+display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.chooselabel {
+  float: left;
+  width: 50px;
+  height: 35px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: flex;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.chooselabel img {
+  display: none;
+  width: 10px;
+  height: auto;
+  margin: auto;
+}
+
+.chooselabel.pink {
+  background: #E91E63;
+}
+
+.chooselabel.blue {
+  background: #00E5FF;
+}
+
+.chooselabel.orange {
+  background: #FB8C00;
+}
+
+.chooselabel.red {
+  background: #f44336;
+}
+
+.chooselabel.indigo {
+  background: #3F51B5;
+}
+
+.chooselabel.lime {
+  background: #388E3C;
+}
+
+.chooselabel.cyan {
+  background: #00BCD4;
+}
+
+.chooselabel.amber {
+  background: #FFC107;
+}
+
+.chooselabel.bluegrey {
+  background: #B0BEC5;
+}
+
+.block-labels.add {
+  display: none;
+  width: 500px;
+  position: absolute;
+  background: #fcfcfc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+}
+
+.block-labels.add .close img {
+  position: absolute;
+  top: 15px;
+  width: 8px;
+  height: 8px;
 }
